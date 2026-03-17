@@ -22,7 +22,7 @@ body {
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 10px;
-    color: antiquewhite;
+    color: white;
     padding: 30xp 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 
@@ -126,4 +126,12 @@ body {
 
 .register-link a:hover { 
      text-decoration: underline;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+button:disabled {
+    opacity: 0.7;
 }

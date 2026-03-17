@@ -4,35 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
-    <title>SS Login</title>
+    <title>SPPME</title>
+    <script src="script.js"></script>
 </head>
 
 <body>
-   <main class="container"> 
+    <main class="container">
         <from>
-            <h1>Login SS</h1>
+            <h1>LOGIN SPPME</h1>
             <div class="input-box">
-                <input placeholder="Usuário" type="email">
+                <input placeholder="Usuário" type="email" id="email" onchange="validateFields()">
                 <i class="bx bxs-user"></i>
-            
+
             </div>
-            <div class="input-box"> 
-                <input placeholder="Senha" type="password">
+            <div class="input-box">
+                <input placeholder="Senha" type="password" id="senha">
                 <i class="bx bxs-lock-alt"></i>
             </div>
 
             <div class="remember-forgot">
                 <label>
-                     <input type="checkbox">
-                      Lembrar senha
+                    <input type="checkbox">
+                    Lembrar senha
                 </label>
-                <a href="#">Esqueci a senha</a>
+                <a href="#" id="recovery-password-button">Esqueci a senha</a>
             </div>
 
-            <button type="submit"
-            class="login">Login</button>
+            <button type="button" class="login" id="login" onclick="logar()">Login</button>
 
             <div class="register-link">
                 <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
@@ -42,4 +42,5 @@
     </main>
 
 </body>
+
 </html>
