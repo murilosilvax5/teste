@@ -6,14 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
-    <title>SPPME</title>
+    <title>SPME</title>
+    <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-auth-compat.js"></script>
+<script>
+     const firebaseConfig = {
+     apiKey: "AIzaSyCAgloyZeTbJBJfsoBYqefBZlbyri1y01M",
+     authDomain: "spme-f781f.firebaseapp.com",
+     projectId: "spme-f781f",
+     storageBucket: "spme-f781f.firebasestorage.app",
+     messagingSenderId: "949847273520",
+     appId: "1:949847273520:web:34d57ac418cf160eacbdf5"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+</script>
     <script src="script.js"></script>
 </head>
 
 <body>
     <main class="container">
-        <from>
-            <h1>LOGIN SPPME</h1>
+        <form>
+            <h1>LOGIN SPME</h1>
             <div class="input-box">
                 <input placeholder="Usuário" type="email" id="email" onchange="validateFields()">
                 <i class="bx bxs-user"></i>
@@ -37,10 +51,12 @@
             <div class="register-link">
                 <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
             </div>
-        </from>
-
+        </form>
+        
     </main>
 
 </body>
+
+
 
 </html>
