@@ -12,11 +12,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('./img/img\ def.png');
-    background-size: cover;
-    background-position: center;
-    
+   }
+
+ .login-body {
+  background: url('../img/img def.png');
+  background-size: cover;
+  background-position: center;
 }
+
 .conteiner {    
     width: 420px;
     background-color: transparent;
@@ -134,4 +137,11 @@ button:active {
 
 button:disabled {
     opacity: 0.7;
+}
+
+#btn-sair {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
 }
