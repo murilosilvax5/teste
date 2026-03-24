@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
     <title>SPME</title>
     <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-auth-compat.js"></script>
@@ -17,25 +17,41 @@
      <header>
         <button id="btn-sair" onclick="sair()">Sair</button>
      </header>
-     <ol>
-        <li>
-            <b>Açai</b>
-            <p>15$</p>
-        </li>    
-        <li>
-             <b>Sorvete</b>
-              <P>15$</p>
-        </li> 
-        <li>
-            <b>Picole</b>
-            <p>10$</p>
-        </li>
-        <li>
-             <b>Todos</b>
-             <p>40$</p>
-        </li>
-     </ol>
+     <div class="container">
+  
+  <div class="coluna">
+    <h2>Tamanho</h2>
+    <ol>
+      <li data-valor="5">Pequeno</li>
+      <li data-valor="7">Médio</li>
+      <li data-valor="10">Grande</li>
+    </ol>
+  </div>
 
+  <div class="coluna">
+    <h2>Sabor</h2>
+    <ol>
+      <li data-valor="5">Chocolate</li>
+      <li data-valor="5">Morango</li>
+      <li data-valor="5">Baunilha</li>
+    </ol>
+  </div>
+
+  <div class="coluna">
+    <h2>Adicionais</h2>
+    <ol>
+      <li data-valor="3">Granulado</li>
+      <li data-valor="3">Leite condensado</li>
+      <li data-valor="5">Calda</li>
+    </ol>
+  </div>
+
+</div>
+
+<div class="total">
+  Total: R$ <span id="valorTotal">0</span>
+</div>
+<script src="pdd.js"></script>
 
     <h1 style="
   position: absolute;
@@ -51,7 +67,7 @@
   z-index: 10;
 ">Monte o Pedido</h1>
 
-</body>
+<body>
 
 
 
