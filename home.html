@@ -2,73 +2,74 @@
 <html lang="pt-br">
 
 <head>
-    <title>SPME- MONTE O PEDIDO</title>
+    <title>SPME - MONTE O PEDIDO</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="home.css">
-    <title>SPME</title>
     <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore-compat.js"></script>
     <script src="init.js"></script>
 </head>
 
 <body>
-     <header>
+    <header>
         <button id="btn-sair" onclick="sair()">Sair</button>
-     </header>
-     <div class="container">
-  
-  <div class="coluna">
-    <h2>Tamanho</h2>
-    <ol>
-      <li data-valor="5">Pequeno</li>
-      <li data-valor="7">Médio</li>
-      <li data-valor="10">Grande</li>
-    </ol>
-  </div>
-
-  <div class="coluna">
-    <h2>Sabor</h2>
-    <ol>
-      <li data-valor="5">Chocolate</li>
-      <li data-valor="5">Morango</li>
-      <li data-valor="5">Baunilha</li>
-    </ol>
-  </div>
-
-  <div class="coluna">
-    <h2>Adicionais</h2>
-    <ol>
-      <li data-valor="3">Granulado</li>
-      <li data-valor="3">Leite condensado</li>
-      <li data-valor="5">Calda</li>
-    </ol>
-  </div>
-
-</div>
-
-<div class="total">
-  Total: R$ <span id="valorTotal">0</span>
-</div>
-<script src="pdd.js"></script>
+        <button onclick="window.location.href='relatorios.html'"> Relatórios</button>
+    </header>
 
     <h1 style="
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
-  color: hsl(0, 100%, 1%);
-  letter-spacing: 1px;
-  white-space: nowrap;
-  z-index: 10;
-">Monte o Pedido</h1>
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+        color: hsl(0, 100%, 1%);
+        letter-spacing: 1px;
+        white-space: nowrap;
+        z-index: 10;
+        background: hsl(0, 2%, 44%);
+        padding: 10px;
+        border-radius: 6px;
+    ">Monte o Pedido</h1>
 
-<body>
+    <div class="container">
+        <div class="coluna">
+            <h2>Tamanho</h2>
+            <ol>
+                <li data-valor="5">Pequeno</li>
+                <li data-valor="7">Médio</li>
+                <li data-valor="10">Grande</li>
+            </ol>
+        </div>
+        <div class="coluna">
+            <h2>Sabor</h2>
+            <ol>
+                <li data-valor="5">Chocolate</li>
+                <li data-valor="5">Morango</li>
+                <li data-valor="5">Baunilha</li>
+            </ol>
+        </div>
+        <div class="coluna">
+            <h2>Adicionais</h2>
+            <ol>
+                <li data-valor="3">Granulado</li>
+                <li data-valor="3">Leite condensado</li>
+                <li data-valor="5">Calda</li>
+            </ol>
+        </div>
+    </div>
 
+    <div class="total">
+        Total: R$ <span id="valorTotal">0</span>
+    </div>
 
+    <button id="btn-finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
 
+    <script src="pedidos.js"></script>
+    <script src="pdd.js"></script>
+</body>
 </html>
