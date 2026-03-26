@@ -76,3 +76,4 @@ function atualizarCards(pedidos) {
 
 // Inicia carregando os pedidos
 carregarPedidos();
+

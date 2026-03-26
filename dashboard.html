@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore-compat.js"></script>
+    <script src="init.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        header {
+            background-color: #d41414;
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header button {
+            background: white;
+            color: #d41414;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        header button:hover {
+            background: #f0f0f0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 16px;
+        }
+
+        h2.secao {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            flex: 1;
+            min-width: 200px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid #d41414;
+        }
+
+        .card .label {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card .valor {
+            font-size: 28px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .card .valor span {
+            font-size: 14px;
+            color: #888;
+            font-weight: normal;
+        }
+
+        .grafico-container {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 32px;
+        }
+
+        .grafico-container h3 {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-botoes {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-botoes a {
+            background: white;
+            color: #d41414;
+            border: 2px solid #d41414;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+
+        .nav-botoes a:hover {
+            background: #d41414;
+            color: white;
+        }
+
+        .carregando {
+            color: #aaa;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-chart-line"></i> Dashboard</h1>
+        <button onclick="sair()">
+            <i class="fa-solid fa-right-from-bracket"></i> Sair
+        </button>
+    </header>
+
+    <main>
+
+        <h2 class="secao">Resumo do mês</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="label">
+                    <i class="fa-solid fa-bag-shopping" style="color:#d41414"></i>
+                    Total de Pedidos
+                </div>
+                <div class="valor" id="totalPedidos">
+                    <span class="carregando">Carregando...</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="label">
+                    <i class="fa-solid fa-dollar-sign" style="color:#d41414"></i>
+                    Faturamento Mensal
+                </div>
+                <div class="valor" id="faturamentoMensal">
+                    <span class="carregando">Carregando...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grafico-container">
+            <h3><i class="fa-solid fa-chart-bar" style="color:#d41414"></i> Faturamento dos últimos 7 dias</h3>
+            <canvas id="graficoFaturamento" height="100"></canvas>
+        </div>
+
+        <h2 class="secao">Navegar</h2>
+        <div class="nav-botoes">
+            <a href="relatorios.html">
+                <i class="fa-solid fa-file-invoice"></i> Relatórios
+            </a>
+            <a href="home.html">
+                <i class="fa-solid fa-bag-shopping"></i> Pedidos
+            </a>
+        </div>
+
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

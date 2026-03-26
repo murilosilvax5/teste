@@ -15,3 +15,11 @@ async function salvarPedido(itens, total) {
 }
 
 console.log("pedidos.js carregou");
+
+function sair() {
+    firebase.auth().signOut().then(() => {
+        window.location.href = "index.html";
+    }).catch((erro) => {
+        console.error("Erro ao sair:", erro);
+    });
+}
